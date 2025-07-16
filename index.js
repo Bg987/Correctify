@@ -19,6 +19,10 @@ app.get('/status', (req, res) => {
   res.status(200).json({ message: "done" });
 });
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: "Welcome to Correctify API" });
+});
+
 app.listen(PORT, () => {
   ping();
   console.log(`✅ Server running on http://localhost:${PORT} and ping done`);

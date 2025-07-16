@@ -1,14 +1,14 @@
-const http = require("http");
+//const http = require("http");
 const https = require("https");
 
 async function ping() {
     setInterval(() => {
-        https.get("http://localhost:5000/status", (res) => {
+        https.get("https://correctify.onrender.com/status", (res) => {
             console.log(`Pinged. Status code: ${res.statusCode}`);
         }).on("error", (e) => {
             console.error(`Ping failed: ${e.message}`);
         });
-    }, 2* 1000); // every 11 minutes
+    }, 1000); // every 11 minutes
 
 }
 
