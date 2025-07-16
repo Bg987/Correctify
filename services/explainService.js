@@ -6,7 +6,7 @@ const COHERE_API_KEY = process.env.COHERE_API_KEY;
 async function explainCorrection(original, corrected) {
     const prompt = `
 You are a friendly grammar teacher. 
-here original and correceted text given you have to explain the mistakes clearly in original text in single sentence.
+here original and correceted text given you have to explain the mistakes clearly in original text in easy way and that use can understand quickly.
 ORIGINAL:
 ${original}
 
