@@ -6,8 +6,8 @@ const COHERE_API_KEY = process.env.COHERE_API_KEY;
 async function correctGrammar(text) {
   const prompt = `
 You are a helpful English teacher.
-Please:give me only correct text with correct grammar and punctuation.
-Do not change the meaning of the text.
+Please:give me only correct paragraph with correct grammar.
+Do not change the size of paragraph no of words in corrected text and no of words in text provides must be same.
 TEXT:
 ${text}
 
@@ -33,7 +33,7 @@ RESPONSE:
         },
       }
     );
-    //console.log("1.Response from Cohere API:", response.data);
+    console.log("1.Response from Cohere API:", response.data);
     const result = response.data.generations[0].text;
     return result;
   } catch (err) {

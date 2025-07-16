@@ -6,8 +6,7 @@ const COHERE_API_KEY = process.env.COHERE_API_KEY;
 async function explainCorrection(original, corrected) {
     const prompt = `
 You are a friendly grammar teacher. 
-Your job is to explain clearly and simply what grammar corrections were made.
-
+here original and correceted text given you have to explain the mistakes clearly in original text in single sentence.
 ORIGINAL:
 ${original}
 
@@ -23,11 +22,10 @@ EXPLAIN:
             {
                 model: 'command-r-plus',
                 prompt: prompt,
-                max_tokens: 300,
+                max_tokens: 5000,
                 temperature: 0.3,
                 p: 1,
-                k: 0,
-                stop_sequences: ["\n\n"]
+                k: 0
             },
             {
                 headers: {

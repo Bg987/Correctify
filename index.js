@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const { ping } = require('./utils/ping');
 require('dotenv').config();
 
 const { handleCorrection } = require('./controllers/correctionController');//main login
@@ -12,12 +13,13 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));//for logs
 
-app.get('/correct/:text', handleCorrection);
+app.post('/correct', handleCorrection);
 
 app.get('/status', (req, res) => {
-  res.json({ message: "Corractify backend is running!" });
+  res.status(200).json({ message: "done" });
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  ping();
+  console.log(`✅ Server running on http://localhost:${PORT} and ping done`);
 });

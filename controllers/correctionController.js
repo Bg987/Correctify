@@ -5,7 +5,7 @@ const { logRequest } = require('../utils/logger');
 
 
 async function handleCorrection(req, res) {
-  const userText = req.params.text;
+  const userText = req.body.text;
   const error = validateText(userText);
   if (error) return res.status(400).json({ error });
 
