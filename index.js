@@ -24,6 +24,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  ping();
+ // ping();
   console.log(`✅ Server running on http://localhost:${PORT} and ping done`);
 });
