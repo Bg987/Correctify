@@ -3,7 +3,7 @@ const https = require("https");
 
 async function ping() {
     setInterval(() => {
-        https.get("https://correctify.onrender.com/status", (res) => {
+        https.get("https://correctify-yp9u.onrender.com/status", (res) => {
             console.log(`Pinged. Status code: ${res.statusCode}`);
         }).on("error", (e) => {
             console.error(`Ping failed: ${e.message}`);
